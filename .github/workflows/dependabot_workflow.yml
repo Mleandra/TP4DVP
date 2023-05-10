@@ -1,8 +1,7 @@
 name: Dependabot Workflow
-
-on:
+on :
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "30 3 * * *"
 
 jobs:
   dependabot:
