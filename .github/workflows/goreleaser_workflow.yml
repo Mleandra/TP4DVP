@@ -22,7 +22,7 @@ jobs:
       - name : checkout
         uses: actions/checkout@v3
 
-      - name: Set up Go
+      - name: Configure Go
         uses: actions/setup-go@v4
         with:
           go-version: stable
