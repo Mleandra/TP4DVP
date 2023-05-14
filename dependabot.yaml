@@ -5,7 +5,8 @@ updates:
 # configuration for go
   - package-ecosystem: "gomod"
     directory: "/"
-    
+    schedule:
+      interval: "daily"
     allow:
       - dependency-type: "direct"
         update-type : "semver: minor"
