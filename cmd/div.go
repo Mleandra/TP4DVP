@@ -1,20 +1,25 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
 */
+
 package cmd
 
 import (
-	"calculator/internals/math"
 	"fmt"
+
+	"calculator/internals/math"
 
 	"github.com/spf13/cobra"
 )
 
-// divCmd represents the div command
+//var x float64
+//var y float64
+
+// divCmd représente la commande de division
 var divCmd = &cobra.Command{
 	Use:   "div",
-	Short: "Division of x and y",
-	Long:  `Addition of x and y`,
+	Short: "Division de x et y",
+	Long:  `Division de x et y`,
 	Run: func(cmd *cobra.Command, args []string) {
 		ret := math.Division(x, y)
 		fmt.Printf("%f / %f = %f\n", x, y, ret)
@@ -23,6 +28,6 @@ var divCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(divCmd)
-	divCmd.Flags().Float64VarP(&x, "x", "x", 0, "first value")
-	divCmd.Flags().Float64VarP(&y, "y", "y", 0, "second value")
+	divCmd.Flags().Float64VarP(&x, "x", "a", 0, "première valeur")
+	divCmd.Flags().Float64VarP(&y, "y", "b", 0, "deuxième valeur")
 }

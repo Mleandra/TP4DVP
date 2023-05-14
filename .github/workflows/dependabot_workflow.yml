@@ -1,7 +1,7 @@
 name: Dependabot Workflow
 on :
   schedule:
-    - cron: "38 3 * * *"
+    - cron: "0 3 * * *"
 
 jobs:
   dependabot:
@@ -16,4 +16,4 @@ jobs:
       - name: Setup Dependabot
         uses: dependabot/dependabot-action@v2
         with:
-          github_token: ${{ secrets.GITHUBTOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
