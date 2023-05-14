@@ -1,4 +1,5 @@
 name: Dependabot Workflow
+
 on :
   schedule:
     - cron: "0 3 * * *"
@@ -7,13 +8,13 @@ jobs:
   dependabot:
     runs-on: ubuntu-latest
     steps:
-      - name: code de checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Go
+      - name: Install Go
         uses: actions/setup-go@v4
         with:
           go-version: '1.16.1'
-      - name: Setup Dependabot
+      - name: Configure Dependabot
         uses: dependabot/dependabot-action@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
