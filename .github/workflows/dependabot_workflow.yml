@@ -20,7 +20,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.mod') }}
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum','**/go.mod') }}
       - name: Configure Dependabot
         uses: dependabot/dependabot-action@v2
         with:
