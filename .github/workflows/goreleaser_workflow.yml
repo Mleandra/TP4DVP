@@ -47,10 +47,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       - name: Build And Push Image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
+          file: Dockerfile
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp4dvp:${{  github.ref_name }}
