@@ -15,6 +15,11 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.16.1'
+      - name :  Cache go version 
+        uses: actions/cache@v3
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.mod') }}
       - name: Configure Dependabot
         uses: dependabot/dependabot-action@v2
         with:
