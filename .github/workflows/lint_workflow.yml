@@ -1,29 +1,29 @@
 name: Lint Workflow
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
-  workflow_dispatch:
 
 jobs:
   Lint:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Static analysis with Semgrep
+    - name: Semgrep Static Analysis    
       uses: returntocorp/semgrep-action@v1
       with:
        config: "p/default"
 
-    - name: Dockerfile Analysis with Hadolint
+    - name: Hadolint Dockerfile Analysis  
       uses: hadolint/hadolint-action@v3.1.0
       with:
        dockerfile: Dockerfile
 
-    - name: Super linter on Pull Request
+    - name: Super Linter For Pull Request
       if: ${{ github.event_name == 'pull_request' }}
       uses: github/super-linter/slim@v5
       env:
